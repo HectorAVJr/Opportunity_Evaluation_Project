@@ -3,13 +3,15 @@
 Overview:
 This project is a backend system that is designed to help a business evaluate incoming opportunities and decide which ones are worth pursuing. The system processes submitted opportunities, calculates a score based on user-defined parameters, and identifies high-value opportunities. Once an opportunity meets a defined threshold, it can be automatically flagged and sent to the business owner via email.
 
+
 Main Project Features:
 * Dynamic Evaluation Models
 * Flexible Opportunity Scoring
 * Automated Decision Making
 * Email Notification
 
-High-Level Workflow
+
+High-Level Workflow:
 * A user defines an evaluation model with custom criteria and weights.
 * A new opportunity is submitted using that model.
 * The backend evaluates the opportunity with a scoring system using the configured parameters.
