@@ -5,6 +5,7 @@ This project is a backend system that is designed to help a business evaluate in
 
 
 Main Project Features:
+
 * Dynamic Evaluation Models
 * Flexible Opportunity Scoring
 * Automated Decision Making
@@ -12,6 +13,7 @@ Main Project Features:
 
 
 High-Level Workflow:
+
 * A user defines an evaluation model with custom criteria and weights.
 * A new opportunity is submitted using that model.
 * The backend evaluates the opportunity with a scoring system using the configured parameters.
@@ -20,9 +22,11 @@ High-Level Workflow:
 
 
 Future Updates:
+
 This document will be expanded with setup instructions, API documentation, and usage examples as development progresses.
 
 
 Contact:
 Developer: Hector Velazquez Jr. (HectorAVJr)
+
 Project: https://github.com/HectorAVJr/Opportunity_Evaluation_Project
