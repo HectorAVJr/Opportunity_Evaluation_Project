@@ -1,6 +1,7 @@
 # Opportunity_Evaluation_Project
 
 Overview:
+
 This project is a backend system that is designed to help a business evaluate incoming opportunities and decide which ones are worth pursuing. The system processes submitted opportunities, calculates a score based on user-defined parameters, and identifies high-value opportunities. Once an opportunity meets a defined threshold, it can be automatically flagged and sent to the business owner via email.
 
 
