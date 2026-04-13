@@ -1,8 +1,10 @@
 # Opportunity_Evaluation_Project
 
+
 Overview:
 
 This project is a backend system that is designed to help a business evaluate incoming opportunities and decide which ones are worth pursuing. The system processes submitted opportunities, calculates a score based on user-defined parameters, and identifies high-value opportunities. Once an opportunity meets a defined threshold, it can be automatically flagged and sent to the business owner via email.
+
 
 
 Main Project Features:
@@ -11,6 +13,7 @@ Main Project Features:
 * Flexible Opportunity Scoring
 * Automated Decision Making
 * Email Notification
+
 
 
 High-Level Workflow:
@@ -22,12 +25,15 @@ High-Level Workflow:
 * Qualified opportunities generate an email notification to the user.
 
 
+
 Future Updates:
 
 This document will be expanded with setup instructions, API documentation, and usage examples as development progresses.
 
 
+
 Contact:
+
 Developer: Hector Velazquez Jr. (HectorAVJr)
 
 Project: https://github.com/HectorAVJr/Opportunity_Evaluation_Project
