@@ -100,17 +100,18 @@ def create_model():
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    # Insert model and get its ID
+    # insert model and get its ID number
     cursor.execute('INSERT INTO models (name) VALUES (?)', (model_name,))
     model_id = cursor.lastrowid
 
-    # Insert criteria for the model
+    # insert criteria
     for crit in criteria:
         cursor.execute('''
             INSERT INTO criteria (model_id, field_name, weight, min, max)
             VALUES (?, ?, ?, ?, ?)
         ''', (model_id, crit['field_name'], crit['weight'], crit['min'], crit['max']))
 
+    # insert derived fields
     for df in derived_fields:
         cursor.execute('''
         INSERT INTO derived_fields (model_id, name, formula)
@@ -141,7 +142,7 @@ def create_opportunity():
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    # Insert opportunity and get its ID
+    # insert opportunity and get its ID
     cursor.execute('''
         INSERT INTO opportunities (model_id, data, score, decision)
         VALUES (?, ?, ?, ?)
