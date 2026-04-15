@@ -60,10 +60,12 @@ def get_guide():
 
         "7": "model_id : 1,",
 
-        "8: data": [
-            "8a: revenue: 40000",
-            "8b: cost: 10000,",
-            "8c: customer_rating: 4"
+        "8": "email : user@example.com",
+
+        "9: data": [
+            "9a: revenue: 40000",
+            "9b: cost: 10000,",
+            "9c: customer_rating: 4"
         ],
     })
 
@@ -134,17 +136,21 @@ def create_opportunity():
     conn.commit()
     conn.close()
 
+
+    recipient_email = data.get("email")
+
+
     if result['decision'] == "Pursue":
         # Placeholder for pursuing logic (e.g., create tasks, assign team, etc.)
         print(f"Opportunity ID: {opportunity_id} marked for Pursuit")
         # Send email notification
-        send_email(opportunity_id, result['score'])
+        send_email(opportunity_id, result, data, recipient_email)
 
     if result['decision'] == "Review":
         # Placeholder for review logic (e.g., flag for manual review, etc.)
         print(f"Opportunity ID: {opportunity_id} marked for Review")
         # Send email notification
-        send_email(opportunity_id, result['score'])
+        send_email(opportunity_id, result, data, recipient_email)
 
 
     return jsonify(result), 201

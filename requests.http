@@ -1,38 +1,7 @@
-### get guide
+### guide
 GET http://127.0.0.1:5000/guide
 
 
-### create model request
-POST http://127.0.0.1:5000/model
-Content-Type: application/json
-
-{
-    "name": "My Model",
-    "criteria": [
-        {
-            "field_name": "profit_margin",
-            "weight": 0.8,
-            "min": 0,
-            "max": 1
-        },
-        {
-            "field_name": "customer_satisfaction",
-            "weight": 0.2,
-            "min": 1,
-            "max": 5
-        }
-    ],
-    "derived_fields": [
-        {
-            "name": "profit_margin",
-            "formula": "(revenue - cost) / revenue"
-        },
-        {
-            "name": "customer_satisfaction",
-            "formula": "customer_rating / 5"
-        }
-    ]
-}
 ### Multi Factor Model
 POST http://127.0.0.1:5000/model
 Content-Type: application/json
@@ -42,13 +11,13 @@ Content-Type: application/json
   "criteria": [
     {
       "field_name": "profit_margin",
-      "weight": 0.6,
+      "weight": 0.5,
       "min": 0,
       "max": 1
     },
     {
       "field_name": "risk_score",
-      "weight": 0.2,
+      "weight": 0.3,
       "min": 0,
       "max": 10
     },
@@ -80,10 +49,11 @@ POST http://127.0.0.1:5000/opportunity
 Content-Type: application/json
 
 {
-  "model_id": 8,
+  "model_id": 1,
+  "email": "hav37@msstate.edu",
   "data": {
     "revenue": 40000,
-    "cost": 10,
+    "cost": 5000,
     "risk": 10,
     "rating": 5
   }
