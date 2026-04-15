@@ -2,7 +2,7 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 import os
 
-
+# allowing email notifications to be send using SendGrid using an API key
 def send_email(opportunity_id, result, data, recipient_email):
     message = Mail(
         from_email="hectoravjr@outlook.com",
