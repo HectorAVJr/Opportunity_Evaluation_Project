@@ -1,6 +1,7 @@
 import json
 from models import get_db_connection
 
+# normalizing value logic to get a score value from 0 - 1.0
 def normalize(value, min_val, max_val):
     if max_val == min_val:
         return 0.0
@@ -11,7 +12,7 @@ def evaluate_opportunity(model_id, data):
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    # Fetch criteria for the model
+    # get criteria for the model
     cursor.execute("""
         SELECT field_name, weight, min, max 
         FROM criteria 
@@ -19,7 +20,7 @@ def evaluate_opportunity(model_id, data):
     """, (model_id,))
     criteria = cursor.fetchall()
 
-    # fetch derived fields for the model
+    # get derived fields for the model
     cursor.execute("""
         SELECT name, formula 
         FROM derived_fields 
