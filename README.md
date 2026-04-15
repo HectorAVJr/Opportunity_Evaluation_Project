@@ -1,4 +1,4 @@
-### Opportunity_Evaluation_Project
+# Opportunity_Evaluation_Project
 
 
 ## Overview:
@@ -26,34 +26,34 @@ This project is a backend system that is designed to help businesses evaluate in
 
 ## Setup Instructions (using Visual Studio Code):
 
-# 1) Clone the github repository by entering the following into your terminal:
+### 1) Clone the github repository by entering the following into your terminal:
 * git clone https://github.com/HectorAVJr/Opportunity_Evaluation_Project
 * cd Opportunity_Evaluation_Project
 
-# 2) Create virtual environment (if not already active) by entering the following into your terminal:
+### 2) Create virtual environment (if not already active) by entering the following into your terminal:
 * python -m venv venv
 * venv\Scripts\activate 
 * (Restarting VS Code and the terminal is sometimes necessary after these steps)
 
 
-# 3) Install dependencies located in 'requirements.txt' by entering this into your terminal:
+### 3) Install dependencies located in 'requirements.txt' by entering this into your terminal:
 * pip install -r requirements.txt
 
-# 4) Configure environment variable (SendGrid API key):
+### 4) Configure environment variable (SendGrid API key):
 * setx SENDGRID_API_KEY "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"
 * Restart VS Code after the terminal says "SUCCESS: Specified value was saved."
 
-# 5) Running the backend system by entering the following into your terminal:
+### 5) Running the backend system by entering the following into your terminal:
 * python app.py (Server will be running at http://127.0.0.1:5000)
 
-# 6) Instructions for using the API:
+### 6) Instructions for using the API:
 * Go to the 'requests.http' file to view a step by step guide on how to create a model with user-determined criteria and how to submit an opportunity with user-specified values. 
 * This is an example of what the inputted format should look like:
 
 
-### Example Model
+## Example Model
 
-"### Example Model
+"### Example Model"
 
 send request
 
@@ -72,24 +72,16 @@ Content-Type: application/json
     "field_name": "profit_margin",
     
     "weight": 0.5,
-    
     "min": 0,
-    
       "max": 1
-      
-       },
-       
+    },
+    
     {
-    
     "field_name": "risk_score",
-    
       "weight": 0.25,
-      
       "min": 0,
-      
       "max": 10
-      
-      },
+    },
       
     {
         "field_name": "customer_satisfaction",
@@ -97,9 +89,9 @@ Content-Type: application/json
         "min": 1,
         "max": 5
     }
-    
   ],
   
+], 
   "derived_fields": [
   
     {
@@ -124,7 +116,9 @@ Content-Type: application/json
 
 
 
-"### Example Model Test
+## Example Model Opportunity Evaluation Test
+
+"### Example Model Test"
 
 POST http://127.0.0.1:5000/opportunity
 
