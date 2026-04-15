@@ -151,17 +151,17 @@ Content-Type: application/json
 
 
 
-Evaluation Logic:
+## Evaluation Logic:
 * The criteria is normalized using its min value and max value range
 * The scoring is weighted based on user-defined importance
-* Final evaluation score determines the recommended decision:
+### * Final evaluation score determines the recommended decision:
 - "Pursue" recommendation is given when a score is 0.7 to 1.0
 - "Reject" recommendation is given when a score is 0.0 to 0.39..
 - "Review" recommendation is given when a score is 0.4 to 0.69..
 
 
 
-Email Notifications:
+## Email Notifications:
 After an opportunity is evaluated, the system sends an email with the following:
 * Opportunity ID
 * Evaluation score
@@ -171,7 +171,7 @@ After an opportunity is evaluated, the system sends an email with the following:
 
 
 
-Design Decisions:
+## Design Decisions:
 * Configurable Models: Allows users from different industries to define their own evaluation logic.
 * Weighted Scoring: Gives users flexibility and the ability to prioritize certain factors over others
 * Derived Fields: Enables users to define their own formulas to further allow flexibility
@@ -179,7 +179,7 @@ Design Decisions:
 
 
 
-References:
+## References:
 * SendGrid online set up and implementing guide: https://app.sendgrid.com/guide , https://www.youtube.com/watch?v=QHxhNu-T9mE 
 * Debugging assistance: ChatGPT (OpenAI)
 * Flask set up and guide: https://www.geeksforgeeks.org/python/flask-creating-first-simple-application/ , https://www.youtube.com/watch?v=IfWZHjsPeHg&t=1181s
@@ -187,7 +187,7 @@ References:
 
 
 
-Contact:
+## Contact:
 
 Developer: Hector Velazquez Jr. (HectorAVJr)
 
