@@ -40,7 +40,7 @@ This project is a backend system that is designed to help businesses evaluate in
 * pip install -r requirements.txt
 
 ### 4) Configure environment variable (SendGrid API key):
-* setx SENDGRID_API_KEY "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"
+* setx SENDGRID_API_KEY "The_Provided_API_Key"
 * Restart VS Code after the terminal says "SUCCESS: Specified value was saved."
 
 ### 5) Running the backend system by entering the following into your terminal:
