@@ -180,9 +180,9 @@ After an opportunity is evaluated, the system sends an email with the following:
 
 
 ## References:
-* SendGrid online set up and implementing guide: https://app.sendgrid.com/guide , https://www.youtube.com/watch?v=QHxhNu-T9mE 
-* Debugging assistance: ChatGPT (OpenAI)
-* Flask set up and guide: https://www.geeksforgeeks.org/python/flask-creating-first-simple-application/ , https://www.youtube.com/watch?v=IfWZHjsPeHg&t=1181s
+* SendGrid online setup and implementing guide: https://app.sendgrid.com/guide , https://www.youtube.com/watch?v=QHxhNu-T9mE 
+* Debugging assistance and error explanation: ChatGPT (OpenAI)
+* Flask setup and guide: https://www.geeksforgeeks.org/python/flask-creating-first-simple-application/ , https://www.youtube.com/watch?v=IfWZHjsPeHg&t=1181s
 
 
 
