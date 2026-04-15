@@ -2,7 +2,7 @@
 GET http://127.0.0.1:5000/guide
 
 
-### Multi Factor Model
+### Example Model
 POST http://127.0.0.1:5000/model
 Content-Type: application/json
 
@@ -17,13 +17,13 @@ Content-Type: application/json
     },
     {
       "field_name": "risk_score",
-      "weight": 0.3,
+      "weight": 0.25,
       "min": 0,
       "max": 10
     },
     {
         "field_name": "customer_satisfaction",
-        "weight": 0.2,
+        "weight": 0.25,
         "min": 1,
         "max": 5
     }
@@ -44,7 +44,7 @@ Content-Type: application/json
   ]
 }
 
-### Multi Model Test
+### Example Model Test
 POST http://127.0.0.1:5000/opportunity
 Content-Type: application/json
 
@@ -54,20 +54,7 @@ Content-Type: application/json
   "data": {
     "revenue": 40000,
     "cost": 5000,
-    "risk": 10,
+    "risk": 2,
     "rating": 5
   }
-}
-
-### submit opportunity for evaluation
-POST http://127.0.0.1:5000/opportunity
-Content-Type: application/json
-
-{
-    "model_id": 1,
-    "data": {
-        "revenue": 55000,
-        "cost": 25000,
-        "customer_rating": 2
-    }
 }

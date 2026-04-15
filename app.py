@@ -78,7 +78,20 @@ def create_model():
     criteria = data.get('criteria', [])
     derived_fields = data.get('derived_fields', [])
 
+    if not model_name or not criteria:
+        return jsonify({"error": "Model name and criteria are required"}), 400
+
+    if any(crit['weight'] <= 0 for crit in criteria):
+        return jsonify({"error": "All criteria weights must be greater than 0"}), 400
+    
+    if any(crit['min'] >= crit['max'] for crit in criteria):
+        return jsonify({"error": "Each criterion's min value must be less than its max value"}), 400
+    
+    if any(crit['max'] <= 0 for crit in criteria):
+        return jsonify({"error": "Each criterion's max value must be greater than 0"}), 400
+    
     total_weight = sum(crit['weight'] for crit in criteria)
+
     if total_weight < 1.0:
         return jsonify({"error": "Total weight of criteria is less than 1.0"}), 400
     if total_weight > 1.0:
@@ -120,6 +133,9 @@ def create_opportunity():
     model_id = data.get('model_id')
     opportunity_data = data.get('data')
 
+    if not model_id or not opportunity_data:
+        return jsonify({"error": "Model ID and opportunity data are required"}), 400
+    
     result = evaluate_opportunity(model_id, opportunity_data)
 
     conn = get_db_connection()
@@ -139,17 +155,20 @@ def create_opportunity():
 
     recipient_email = data.get("email")
 
-
+    if not recipient_email:
+        return jsonify({"error": "Recipient email is required to send evaluation results"}), 400    
+    
+    # send email based on decision
     if result['decision'] == "Pursue":
-        # Placeholder for pursuing logic (e.g., create tasks, assign team, etc.)
         print(f"Opportunity ID: {opportunity_id} marked for Pursuit")
-        # Send email notification
         send_email(opportunity_id, result, data, recipient_email)
 
     if result['decision'] == "Review":
-        # Placeholder for review logic (e.g., flag for manual review, etc.)
         print(f"Opportunity ID: {opportunity_id} marked for Review")
-        # Send email notification
+        send_email(opportunity_id, result, data, recipient_email)
+
+    if result['decision'] == "Reject":
+        print(f"Opportunity ID: {opportunity_id} marked for Rejection")
         send_email(opportunity_id, result, data, recipient_email)
 
 

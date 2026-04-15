@@ -63,7 +63,7 @@ def evaluate_opportunity(model_id, data):
 
 
     return {
-        "score": round(total_score, 3),
+        "score": round(total_score, 4),
         "decision": decision,
         "evaluated_data": evaluated_data,
         "breakdown": breakdown
